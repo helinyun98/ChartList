@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         Random random = new Random();
 
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 1000; i++) {
             ChartItemData e = new ChartItemData(i * 20, random.nextInt(100));
             chartList.add(e);
         }

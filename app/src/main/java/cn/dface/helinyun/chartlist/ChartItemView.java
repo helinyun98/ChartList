@@ -63,6 +63,7 @@ public class ChartItemView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        path.reset();
         path.moveTo(0, height);
         float y1 = height - pointPre.y / maxY * height;
         path.lineTo(0, y1);
