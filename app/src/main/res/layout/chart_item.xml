@@ -17,6 +17,7 @@
             />
 
     <cn.dface.helinyun.chartlist.ChartItemView
+            android:id="@+id/chartItem"
             android:layout_width="20dp"
             android:layout_height="match_parent"
             chart:preX="0"
