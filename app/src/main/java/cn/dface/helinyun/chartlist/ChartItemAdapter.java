@@ -17,6 +17,10 @@ public class ChartItemAdapter extends RecyclerView.Adapter<ChartItemViewHolder> 
         this.chartList = chartList;
     }
 
+    public Activity getActivity() {
+        return activityWeakReference.get();
+    }
+
     @Override
     public int getItemCount() {
         return chartList.size() - 1;

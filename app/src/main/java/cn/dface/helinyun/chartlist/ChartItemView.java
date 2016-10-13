@@ -10,9 +10,11 @@ public class ChartItemView extends View {
 
     private PointF pointPre = new PointF(0.0f, 0.0f);
     private PointF pointNext = new PointF(0.0f, 0.0f);
+
     private int width;
     private int height;
     private float maxY;
+
     private Path path;
     private Paint paint;
 
@@ -27,16 +29,10 @@ public class ChartItemView extends View {
     public ChartItemView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         if (attrs != null) {
-            //获取值
             TypedArray attributes = context.obtainStyledAttributes(attrs, R.styleable.ChartItemView);
+
             try {
-                float preX = attributes.getFloat(R.styleable.ChartItemView_preX, 0);
-                float preY = attributes.getFloat(R.styleable.ChartItemView_preY, 0);
-                float nextX = attributes.getFloat(R.styleable.ChartItemView_nextX, 0);
-                float nextY = attributes.getFloat(R.styleable.ChartItemView_nextY, 0);
                 maxY = attributes.getFloat(R.styleable.ChartItemView_maxY, 0f);
-                pointPre = new PointF(preX, preY);
-                pointNext = new PointF(nextX, nextY);
             } finally {
                 attributes.recycle();
             }
@@ -51,6 +47,14 @@ public class ChartItemView extends View {
         this.pointPre = pointPre;
         this.pointNext = pointNext;
         this.invalidate();
+    }
+
+    public float getMaxY() {
+        return maxY;
+    }
+
+    public void setMaxY(float maxY) {
+        this.maxY = maxY;
     }
 
     @Override
