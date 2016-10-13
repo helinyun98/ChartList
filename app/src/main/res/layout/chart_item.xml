@@ -20,10 +20,6 @@
             android:id="@+id/chartItem"
             android:layout_width="20dp"
             android:layout_height="match_parent"
-            chart:preX="0"
-            chart:nextX="20"
-            chart:preY="40"
-            chart:nextY="80"
             chart:maxY="100.0"
             />
 

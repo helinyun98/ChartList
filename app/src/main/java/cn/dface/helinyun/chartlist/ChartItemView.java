@@ -2,8 +2,7 @@ package cn.dface.helinyun.chartlist;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.Canvas;
-import android.graphics.PointF;
+import android.graphics.*;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -14,6 +13,8 @@ public class ChartItemView extends View {
     private int width;
     private int height;
     private float maxY;
+    private Path path;
+    private Paint paint;
 
     public ChartItemView(Context context) {
         this(context, null);
@@ -41,6 +42,9 @@ public class ChartItemView extends View {
             }
         }
 
+        path = new Path();
+        paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        paint.setColor(Color.BLACK);
     }
 
     public void updateData(PointF pointPre, PointF pointNext) {
@@ -59,6 +63,14 @@ public class ChartItemView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        path.moveTo(0, height);
+        float y1 = height - pointPre.y / maxY * height;
+        path.lineTo(0, y1);
+        float y2 = height - pointNext.y / maxY * height;
+        path.lineTo(width, y2);
+        path.lineTo(width, height);
+        path.close();
+        canvas.drawPath(path, paint);
     }
 
 }
