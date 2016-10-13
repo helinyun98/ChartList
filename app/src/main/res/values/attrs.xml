@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ChartItemView">
+        <attr name="preX" format="float"/>
+        <attr name="preY" format="float"/>
+        <attr name="nextX" format="float"/>
+        <attr name="nextY" format="float"/>
+        <attr name="maxY" format="float"/>
+    </declare-styleable>
+</resources>
